@@ -14,6 +14,84 @@ import avatar from './avatar.png'
 * */
 
 // нужно создать правильный тип вместо any
+export type UserType = {
+    avatar: string
+    name: string
+}
+
+export type MessageInMessageTypeType = {
+    text: string
+    time: string
+}
+
+export type MessageType = {
+    id:number
+    user: UserType
+    message: MessageInMessageTypeType
+
+}
+
+// структуру объекта не менять
+export const message0: MessageType = {
+    id: 0,
+    user: {
+        avatar: avatar, // можно менять
+        name: 'Me',  // можно менять
+    },
+    message: {
+        text: 'How is my twin-friend doing today?', // можно менять
+        time: new Date().toTimeString().slice(0,5) // можно менять
+    },
+}
+export const friendMessage0: MessageType = {
+    id: 100,
+    user: {
+        avatar: avatar, // можно менять
+        name: 'My twin-friend', // можно менять
+    },
+    message: {
+        text: 'I am bored!', // можно менять
+        time: new Date().toTimeString().slice(0,5) // можно менять
+    },
+}
+
+const HW1 = () => {
+    return (
+        <div id={'hw1'}>
+            <div className={s2.hwTitle}>Homework #1</div>
+            <div className={s2.hw}>
+                {/*проверка отображения (не менять)*/}
+                <div>
+                    <Message message={message0} />
+                    <FriendMessage message={friendMessage0} />
+                </div>
+
+                {/*для автоматической проверки дз (не менять)*/}
+                <MessageSender M={Message} />
+            </div>
+        </div>
+    )
+}
+
+export default HW1
+
+/*
+import React from 'react'
+import Message from './message/Message'
+import MessageSender from './message-sender/MessageSender'
+import s2 from '../../s1-main/App.module.css'
+import FriendMessage from './friend-message/FriendMessage'
+import avatar from './avatar.png'
+
+/!*
+* 1 - описать тип MessageType
+* 2 - описать тип MessagePropsType в файле Message.tsx
+* 3 - в файле Message.tsx отобразить приходящие данные
+* 4 - выполнить пункты 2, 3 в файле FriendMessage.tsx
+* 5 - сделать стили в соответствии с дизайном
+* *!/
+
+// нужно создать правильный тип вместо any
 export type MessageType = any
 
 // структуру объекта не менять
@@ -45,13 +123,13 @@ const HW1 = () => {
         <div id={'hw1'}>
             <div className={s2.hwTitle}>Homework #1</div>
             <div className={s2.hw}>
-                {/*проверка отображения (не менять)*/}
+                {/!*проверка отображения (не менять)*!/}
                 <div>
                     <Message message={message0} />
                     <FriendMessage message={friendMessage0} />
                 </div>
 
-                {/*для автоматической проверки дз (не менять)*/}
+                {/!*для автоматической проверки дз (не менять)*!/}
                 <MessageSender M={Message} />
             </div>
         </div>
@@ -59,3 +137,5 @@ const HW1 = () => {
 }
 
 export default HW1
+
+*/

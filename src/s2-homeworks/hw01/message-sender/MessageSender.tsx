@@ -41,6 +41,7 @@ const MessageSender = (props: any) => {
 
     return (
         <>
+        <div style={{display:'flex', flexDirection:'column'}}>
             {messages.map((m) => (
                 <M key={'message' + m.id} message={m} />
             ))}
@@ -58,17 +59,18 @@ const MessageSender = (props: any) => {
                     onChange={onChange}
                     onKeyDown={onKeyDown}
                 />
-                <button
-                    id={'hw1-button'}
-                    className={s.button}
-
-                    onClick={addMessage}
-                >
-                    {/*текст кнопки могут изменить студенты*/}
-                    Send
-                    {/**/}
-                </button>
             </div>
+        </div>
+            <button
+                id={'hw1-button'}
+                className={s.button}
+
+                onClick={addMessage}
+            >
+                {/*текст кнопки могут изменить студенты*/}
+                Send
+                {/**/}
+            </button>
         </>
     )
 }
