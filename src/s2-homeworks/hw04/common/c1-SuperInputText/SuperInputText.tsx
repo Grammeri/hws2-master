@@ -47,10 +47,19 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         e.key === 'Enter' && // и если нажата кнопка Enter
         onEnter() // то вызвать его
     }
-
+//'a' + 'b'='ab'
     const finalSpanClassName = s.error
-        + (spanClassName ? ' ' + spanClassName : '')
-    const finalInputClassName = s.input
+        + (spanClassName ? ' ' + spanClassName : '')//к s.error добавляй стрингу с пробелом или ни
+  //  (spanClassName ? ' ' + spanClassName : '')
+   //spanClassName?
+    //yes:
+    //1) ( ' ' + spanClassName )
+    //2) s.error + ' ' + spanClassName === `${s.error} ${spanClassName}` (С ПРОБЕЛОМ!)
+    //2) s.error + spanClassName === `${s.error}${spanClassName}` (БЕЗ ПРОБЕЛА!)
+    //no:
+    //1) ('')
+    //2) s.error+ '' ===`${s.error}`(без ПРОБЕЛА)
+                const finalInputClassName = s.input
         + (error ? ' ' + s.errorInput : ' ' + s.superInput)
         + (className ? ' ' + s.className : '') // задача на смешивание классов
 
