@@ -35,7 +35,7 @@ position: fixed
     color: crimson;
 }
 
-.nav .active {
+.nav a.active {
 
     font-family: 'Montserrat';
     font-style: normal;
