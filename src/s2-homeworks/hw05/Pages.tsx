@@ -6,9 +6,9 @@ import Junior from './pages/Junior'
 import JuniorPlus from './pages/JuniorPlus'
 
 export const PATH = {
-    PRE_JUNIOR: '/pre_junior',
+    PRE_JUNIOR: '/pre-junior',
     JUNIOR: '/junior',
-    JUNIOR_PLUS: '/junior_plus',
+    JUNIOR_PLUS: '/junior-plus',
 }
 
 function Pages() {
@@ -19,17 +19,20 @@ function Pages() {
                 {/*роутинг будут писать студенты*/}
                 {/*в начале мы попадаем на страницу '/' и переходим сразу на страницу /pre-junior*/}
                 {/*<Route ...*/}
+                <Route path="/" element={<Navigate to={PATH.PRE_JUNIOR}/>}/>
+                <Route path={PATH.PRE_JUNIOR} element={<PreJunior/>}/>
+                <Route path={PATH.JUNIOR} element={<Junior/>}/>
+                <Route path={PATH.JUNIOR_PLUS} element={<JuniorPlus/>}/>
+                <Route path="*" element={<Error404/>}/>
+
 
                 {/*роуты для /pre-junior, /junior, /junior-plus*/}
-                <Route path="/" element={<Navigate to={PATH.PRE_JUNIOR}/>}/>
-                <Route path={PATH.PRE_JUNIOR} element={<PreJunior />} />
-                <Route path={PATH.JUNIOR} element={<Junior />} />
-                <Route path={PATH.JUNIOR_PLUS} element={<JuniorPlus />} />
+                {/*<Route ...*/}
+                {/*<Route ...*/}
+                {/*<Route ...*/}
 
                 {/*роут для несуществующей страницы должен отрисовать <Error404 />*/}
                 {/*<Route ...*/}
-                <Route path="404" element={<Error404/>}/>
-                <Route path='*' element={<Navigate to={"404"} />}/>
             </Routes>
         </div>
     )
