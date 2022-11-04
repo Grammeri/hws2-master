@@ -2,6 +2,12 @@ import React from 'react'
 import { homeWorkReducer } from '../homeWorkReducer'
 import { UserType } from '../../HW8'
 
+type UserType = {
+    _id: number
+    name: string
+    age: number
+}
+
 let initialState: UserType[] // need to fix any
 
 beforeEach(() => {
