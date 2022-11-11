@@ -33,7 +33,7 @@ const HW12 = () => {
     /*const themeId = 1*/
 
     const change = (id: number) => { // дописать функцию
-        dispatch(changeThemeId(themeId))
+        dispatch(changeThemeId(id))
     }
 
     useEffect(() => {
@@ -51,9 +51,9 @@ const HW12 = () => {
                     id={'hw12-select-theme'}
                     className={s.select}
                     // сделать переключение тем
-                    onChangeOption={(e)=>{change(e.currentTarget.value)}}
+                    /*onChangeOption={(e)=>{change(e.currentTarget.value)}}*/
                     options={themes}
-                    /*onChangeOption={change}*/
+                    onChangeOption={change}
                 />
             </div>
         </div>
