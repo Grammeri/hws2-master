@@ -70,7 +70,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={info === "...loading"}
                     >
                         Send false
                     </SuperButton>
