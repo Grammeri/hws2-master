@@ -38,14 +38,14 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-                setText(res.data.errorText)
+                setText(res.data.info)
                 setInfo("")
 
             })
             .catch((e) => {
                 console.log(e)
                 // дописать
-                setText(e.response.data.info)
+                setText(e.message)
                 setInfo("")
             })
     }
