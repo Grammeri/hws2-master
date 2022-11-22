@@ -44,29 +44,30 @@ const HW13 = () => {
 
             })
             .catch((e) => {
-                console.log(e)
+
                 // дописать
                 if (x === false) {
-                    console.log(e)
-                    /*setText(e.response.data.errorText)*/
-                    /*setInfo(e.data.info)*/
+
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
                     setCode(`${e.response.status}`)
                     setImage(error500)
                   /*  setInfo("")*/
                 }
                 if (x === undefined) {
-                    /*setText(e.response.data.errorText)*/
-                    /*setInfo(e.data.info)*/
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
                     setCode(`${e.response.status}`)
                     setImage(error400)
                     /*setInfo("")*/
                 }
                 if (x === null) {
+                    console.log(e)
                     setImage(errorUnknown)
                     setInfo('Error')
                     setText(e.message)
                 }
-                setInfo("")
+
             })
 
     }
