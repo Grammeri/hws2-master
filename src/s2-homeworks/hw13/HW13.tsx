@@ -39,7 +39,7 @@ const HW13 = () => {
                 setImage(success200)
                 // дописать
                 console.log(res.data)
-                setText(res.data.text)
+                setText(res.data.errorText)
                 setInfo(res.data.info)
 
             })
