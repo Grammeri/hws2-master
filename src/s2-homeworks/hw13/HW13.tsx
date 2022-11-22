@@ -38,16 +38,26 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-                setText(res.data.info)
+                setText(res.data.errorText)
                 setInfo("")
 
             })
             .catch((e) => {
                 console.log(e)
                 // дописать
-                setText(e.message)
+                if(x===false){
+                    setText(e.response.data.info)
+                    setImage(error500)
+                } else if (x===undefined){
+                    setText(e.response.data.info)
+                    setImage(error400)
+                } else {
+                    setImage(errorUnknown)
+                    setText("Error!")
+                }
                 setInfo("")
             })
+
     }
 
     return (
