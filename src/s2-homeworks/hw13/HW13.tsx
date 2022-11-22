@@ -9,9 +9,9 @@ import error500 from './images/500.svg'
 import errorUnknown from './images/error.svg'
 
 /*
-* 1 - дописать функцию send
+*- дописать функцию send
 * 2 - дизэйблить кнопки пока идёт запрос
-* 3 - сделать стили в соответствии с дизайном
+* 3 - сделать стили в соответствии с дизайном 1
 * */
 
 const HW13 = () => {
@@ -47,16 +47,19 @@ const HW13 = () => {
                 console.log(e)
                 // дописать
                 if (x === false) {
-                    setText(e.response.data.textError)
+                    setText(e.response.data.errorText)
+                    setInfo(e.data.info)
                     setImage(error500)
                 }
                 if (x === undefined) {
-                    setText(e.response.data.Error)
+                    setText(e.response.data.errorText)
+                    setInfo(e.data.info)
                     setImage(error400)
                 }
                 if (x === null) {
+                    alert(e.message)
                     setImage(errorUnknown)
-                    setText("Error")
+                    setText(e.message)
                 }
                 setInfo("")
             })
