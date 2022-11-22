@@ -47,17 +47,18 @@ const HW13 = () => {
                 console.log(e)
                 // дописать
                 if (x === false) {
-                    setText(e.response.data.errorText)
-                    setInfo(e.data.info)
+                    /*setText(e.response.data.errorText)*/
+                    /*setInfo(e.data.info)*/
                     setImage(error500)
+                  /*  setInfo("")*/
                 }
                 if (x === undefined) {
-                    setText(e.response.data.errorText)
-                    setInfo(e.data.info)
+                    /*setText(e.response.data.errorText)*/
+                    /*setInfo(e.data.info)*/
                     setImage(error400)
+                    /*setInfo("")*/
                 }
                 if (x === null) {
-                    alert(e.message)
                     setImage(errorUnknown)
                     setText(e.message)
                 }
