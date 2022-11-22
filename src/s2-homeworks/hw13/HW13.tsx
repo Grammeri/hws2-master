@@ -45,15 +45,17 @@ const HW13 = () => {
             .catch((e) => {
                 console.log(e)
                 // дописать
-                if(x===false){
+                if (x === false) {
                     setText(e.response.data.info)
                     setImage(error500)
-                } else if (x===undefined){
+                }
+                if (x === undefined) {
                     setText(e.response.data.info)
                     setImage(error400)
-                } else {
+                }
+                if (x === null) {
                     setImage(errorUnknown)
-                    setText("Error!")
+                    setText("Error")
                 }
                 setInfo("")
             })
